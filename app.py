@@ -28,6 +28,10 @@ def about():
 def news():
     return render_template('news.html')
 
+@app.route('/upload')
+def upload():
+    return render_template('upload.html')
+
 @app.route('/zac')
 def zac():
     return render_template('zac.html')
