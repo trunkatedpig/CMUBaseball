@@ -35,14 +35,15 @@
     <div class="slider">
       {% for slide in slides %}
       <div>
-        <a href="news"><img src="{{ slide[1] }}" style="width:100%"></img></a>
+        <a href="news#{{ slide[0] }}"><img src="{{ slide[1] }}" style="width:100%"></img></a>
         <a href="news"><div id="caption">{{ slide[0] }}</div></a>
       </div>
       {% endfor %}
     </div>
   </div>
-  <div class="pure-u-1-3" style="color: #464646">
-    <table class="pure-table pure-table-horizontal" style="background-color:white; width:100%">
+  <div class="pure-u-1-24"></div>
+  <div class="pure-u-7-24" style="color: #464646">
+    <table class="pure-table pure-table-horizontal" style="background-color:white; width:100%;">
       <thead><tr><td>Recent Scores</td><td></td></tr></thead>
       <tbody>
         {% for game in scores %}
@@ -66,7 +67,7 @@
   </div>
 </div>
 <script type="text/javascript">
-  tinySlider({
+  window.onload = tinySlider({
     container: document.querySelector('.slider'),
     hasNav: false,
     navText: [],

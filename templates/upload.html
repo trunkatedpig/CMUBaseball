@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
-{%block headcontent %}
+{% block headcontent %}
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<style>td {padding:0px;}</style>
 {% endblock headcontent %}
 
 {% block bodycontent %}
@@ -10,6 +11,7 @@
   <fieldset class="pure-group">
     <legend style="color:#FFFFFF">Upload Article</legend>
     <input id="articleTitle" type="text" class="pure-input-1" placeholder="Title">
+    <input id="articleImage" type="text" class="pure-input-1" placeholder="Image Link">
     <textarea id="articleText" class="pure-input-1" placeholder="Text"></textarea>
   </fieldset>
   <button type="submit" class="pure-button pure-input pure-button-primary">Submit</button>
@@ -23,9 +25,9 @@
 
     <input id="playerLast" type="text" placeholder="Last Name">
 
-    <input id="playerNumber" type="text" placeholder="Number">
+    <input id="playerNumber" type="number" placeholder="Number">
 
-    <input id="playerWeight" type="text" placeholder="Weight">
+    <input id="playerWeight" type="number" placeholder="Weight">
 
     <label for="playerHeightFeet">Height</label>
     <select id="playerHeightFeet">
@@ -100,5 +102,58 @@
     </select>
   </fieldset>
   <button type="submit" class="pure-button pure-input pure-button-primary">Submit</button>
+</form>
+<br>
+<form class="pure-form">
+  <fieldset>
+    <legend style="color:#FFFFFF">Enter Game Info</legend>
+    <table class="pure-table">
+      <thead>
+        <tr>
+          <th>Player Name</th>
+          <th>Pos</th>
+          <th>PA</th>
+          <th>AB</th>
+          <th>R</th>
+          <th>H</th>
+          <th>2B</th>
+          <th>3B</th>
+          <th>HR</th>
+          <th>RBI</th>
+          <th>BB</th>
+          <th>SO</th>
+          <th>SB</th>
+          <th>CS</th>
+          <th>HBP</th>
+          <th>LOB</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:0px;">
+            <select id="gamePlayerName">
+            <option>None</option>
+            {% for player in players %}<option>{{ player }}</option>{% endfor %}
+            </select>
+          </td>
+          <td style="padding:0px;"><input id="pos" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="PA" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="AB" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="R" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="H" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="2B" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="3B" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="HR" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="RBI" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="BB" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="SO" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="SB" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="CS" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="HBP" type="number" style="width:100%"></td>
+          <td style="padding:0px;"><input id="LOB" type="number" style="width:100%"></td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
 </form>
 {% endblock bodycontent %}

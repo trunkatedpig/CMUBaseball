@@ -2,5 +2,108 @@
 
 {% block bodycontent %}
 <h1>Stats</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis rutrum erat, nec pellentesque tellus imperdiet sed. Duis dictum neque dapibus lectus sodales commodo. Duis porta tortor dui, sit amet pretium augue iaculis ac. Proin non mi non est sagittis accumsan sed ut nisl. Quisque volutpat ac nisl volutpat consectetur. Nulla eget metus sagittis, laoreet ante et, bibendum nisl. Nulla tempor augue sit amet nunc feugiat ultricies vitae ac urna. Mauris ut gravida leo. Quisque consectetur porttitor ullamcorper. Phasellus quis magna interdum, tincidunt tortor in, molestie libero. Phasellus viverra sit amet leo et lobortis. Sed nec ultrices metus. Ut turpis sem, auctor vitae fermentum sit amet, iaculis ut diam.</p>
+<table class="pure-table" style="width:100%; background-color:white; color:black">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>G</th>
+      <th>PA</th>
+      <th>AB</th>
+      <th>R</th>
+      <th>H</th>
+      <th>2B</th>
+      <th>3B</th>
+      <th>HR</th>
+      <th>RBI</th>
+      <th>BB</th>
+      <th>SO</th>
+      <th>SB</th>
+      <th>CS</th>
+      <th>AVG</th>
+      <th>OBP</th>
+      <th>SLG</th>
+      <th>OPS</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for hitter in hitters %}
+  {% if loop.index is divisibleby 2 %}
+    <tr>
+  {% else %}
+    <tr class="pure-table-odd">
+  {% endif %}
+      <td>{{ hitter[0] }}</td>
+      <td>{{ hitter[1] }}</td>
+      <td>{{ hitter[2] }}</td>
+      <td>{{ hitter[3] }}</td>
+      <td>{{ hitter[4] }}</td>
+      <td>{{ hitter[5] }}</td>
+      <td>{{ hitter[6] }}</td>
+      <td>{{ hitter[7] }}</td>
+      <td>{{ hitter[8] }}</td>
+      <td>{{ hitter[9] }}</td>
+      <td>{{ hitter[10] }}</td>
+      <td>{{ hitter[11] }}</td>
+      <td>{{ hitter[12] }}</td>
+      <td>{{ hitter[13] }}</td>
+      <td>{{ hitter[14] }}</td>
+      <td>{{ hitter[15] }}</td>
+      <td>{{ hitter[16] }}</td>
+      <td>{{ hitter[17] }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<br>
+<table class="pure-table" style="width:100%; background-color:white; color:black">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>W</th>
+      <th>L</th>
+      <th>ERA</th>
+      <th>G</th>
+      <th>GS</th>
+      <th>CG</th>
+      <th>SHO</th>
+      <th>SV</th>
+      <th>IP</th>
+      <th>H</th>
+      <th>R</th>
+      <th>ER</th>
+      <th>HR</th>
+      <th>BB</th>
+      <th>SO</th>
+      <th>BAA</th>
+      <th>WHIP</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for pitcher in pitchers %}
+  {% if loop.index is divisibleby 2 %}
+    <tr>
+  {% else %}
+    <tr class="pure-table-odd">
+  {% endif %}
+      <td>{{ pitcher[0] }}</td>
+      <td>{{ pitcher[1] }}</td>
+      <td>{{ pitcher[2] }}</td>
+      <td>{{ pitcher[3] }}</td>
+      <td>{{ pitcher[4] }}</td>
+      <td>{{ pitcher[5] }}</td>
+      <td>{{ pitcher[6] }}</td>
+      <td>{{ pitcher[7] }}</td>
+      <td>{{ pitcher[8] }}</td>
+      <td>{{ pitcher[9] }}</td>
+      <td>{{ pitcher[10] }}</td>
+      <td>{{ pitcher[11] }}</td>
+      <td>{{ pitcher[12] }}</td>
+      <td>{{ pitcher[13] }}</td>
+      <td>{{ pitcher[14] }}</td>
+      <td>{{ pitcher[15] }}</td>
+      <td>{{ pitcher[16] }}</td>
+      <td>{{ pitcher[17] }}</td>
+  {% endfor %}
+  </tbody>
+</table>
 {% endblock bodycontent %}
