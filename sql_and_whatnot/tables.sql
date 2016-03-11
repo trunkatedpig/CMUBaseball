@@ -1,6 +1,12 @@
-CREATE TABLE players(
+ReallyReallyCREATE TABLE players(
 	player_id 			INT(8) NOT NULL AUTO_INCREMENT,
 	player_name 		VARCHAR(255) NOT NULL,
+	player_number		INT(2) NOT NULL,
+	player_year		VARCHAR(16) NOT NULL,
+	player_hit		VARCHAR(1) NOT NULL,
+	player_throw		VARCHAR(1) NOT NULL,
+	player_height		INT(8),
+	player_weight		INT(8),
 	is_current 			BIT NOT NULL,
 	GP					INT(8),
 	AB					INT(8),
