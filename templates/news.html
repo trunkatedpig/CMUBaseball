@@ -6,10 +6,16 @@
   {% for story in news %}
   <tr>
     <td>
-      <h2 id="{{ story[0] }}">{{ story[0] }}</h2>
-      {{ story[2] }}
-      <img src="{{ story[1] }}" style="width:100%;"></img>
+      <h2 id="{{ story[1] }}">{{ story[0] }}</h2>
       {{ story[3] }}
+      <div class="pure-g">
+        <div class="pure-u-1-6"></div>
+        <div class="pure-u-2-3">
+          <img src="{{ story[2] }}" style="width:100%;"></img>
+        </div>
+        <div class="pure-u-1-6"></div>
+      </div>
+      {% for paragraph in story[4] %}<p>{{ paragraph }}</p>{% endfor %}
     </td>
   </tr>  
   {% endfor %}

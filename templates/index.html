@@ -9,7 +9,7 @@
   width: 100%;
   bottom: 5px;
   padding: 9px;
-  background-color: rgba(70,70,70,.5);
+  background-color: rgba(46,46,46,.5);
   color:white;
   text-decoration: none;
 }
@@ -25,7 +25,7 @@
   border-radius: 50%;
   background: #FFFFFF;
 }
-.tiny-active { background: #464646; }
+.tiny-active { background: #990000; }
 </style>
 {% endblock headcontent %}
 
@@ -35,16 +35,16 @@
     <div class="slider">
       {% for slide in slides %}
       <div>
-        <a href="news#{{ slide[0] }}"><img src="{{ slide[1] }}" style="width:100%"></img></a>
-        <a href="news"><div id="caption">{{ slide[0] }}</div></a>
+        <a href="news#{{ slide[1] }}"><img src="{{ slide[2] }}" style="width:100%"></img></a>
+        <a href="news#{{ slide[1] }}"><div id="caption">{{ slide[0] }}</div></a>
       </div>
       {% endfor %}
     </div>
   </div>
   <div class="pure-u-1-24"></div>
   <div class="pure-u-7-24" style="color: #464646">
-    <table class="pure-table pure-table-horizontal" style="background-color:white; width:100%;">
-      <thead><tr><td>Recent Scores</td><td></td></tr></thead>
+    <table class="pure-table pure-table-horizontal" style="background-color:white; width:100%; border-width:0px;">
+      <thead style="background-color:#990000; color:white;"><tr><td>Recent Scores</td><td></td></tr></thead>
       <tbody>
         {% for game in scores %}
           {% if loop.index is divisibleby 2 %}
@@ -59,6 +59,26 @@
             </td>
             <td style="text-align:right;">
               {{ game[4] }}
+            </td>
+          </tr> 
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <table class="pure-table pure-table-horizontal" style="background-color:white; width:100%; border-width:0px;">
+      <thead style="background-color:#990000; color:white;"><tr><td>Upcoming Games</td><td></td></tr></thead>
+      <tbody>
+        {% for game in schedule %}
+          {% if loop.index is divisibleby 2 %}
+          <tr>
+          {% else %}
+          <tr class="pure-table-odd">
+          {%endif %}
+            <td>
+              {{ game[0]}} {{ game[1] }}
+            </td>
+            <td style="text-align:right;">
+              {{ game[2] }}
             </td>
           </tr> 
         {% endfor %}

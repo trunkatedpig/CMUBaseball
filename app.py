@@ -8,9 +8,10 @@ app.debug = True
 @app.route('/')
 @app.route('/home')
 def index():
-    articles=[["Zac Smiles at Camera","http://i.imgur.com/P8nsRbX.jpg"],["Sameer Hits Balls","http://i.imgur.com/y7PQTF7.jpg"],["Darren Throws Balls","http://imgur.com/LiB1npZ.jpg"]]
+    articles=[["Zac Smiles at Camera",3,"http://i.imgur.com/P8nsRbX.jpg"],["Sameer Hits Balls",2,"http://i.imgur.com/y7PQTF7.jpg"],["Darren Throws Balls",1,"http://imgur.com/LiB1npZ.jpg"]]
     games=[["Boyce","CMU",1,14,"October 16"],["CMU","George Mason",4,2,"March 6"],["Boston University","CMU",3,10,"March 6"],["VCU","CMU",14,17,"March 7"],["CMU","Xavier",4,15,"March 7"]]
-    return render_template('index.html', slides=articles, scores=games)
+    schedule=[["at","Boyce","March 17"],["vs","Duqense","March 18"]]
+    return render_template('index.html', slides=articles, scores=games, schedule=schedule)
 
 @app.route('/stats')
 def stats():
@@ -24,7 +25,8 @@ def schedule():
 
 @app.route('/roster')
 def roster():
-    players = [["Aaron Mortenson","http://i.imgur.com/UR6rM48.jpg",30,"OF","Freshman","R","R",'''6'0"''',"195"]]
+    players = [["Aaron Mortenson","http://i.imgur.com/UR6rM48.jpg",30,"OF","Freshman","R","R",'''6'0"''',"195"],
+               ["Tahj Springer","http://i.imgur.com/xnSAFPh.jpg",43,"2B","Freshman","R","R",'''5'10"''',"120"]]
     return render_template('roster.html', players=players)
 
 @app.route('/about')
@@ -33,7 +35,10 @@ def about():
 
 @app.route('/news')
 def news():
-    return render_template('news.html')
+    news=[["Zac Smiles at Camera",3,"http://i.imgur.com/P8nsRbX.jpg","March 7, 2016",["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis ligula ac leo feugiat, eu dignissim arcu sollicitudin. Aliquam vulputate tempor scelerisque. Phasellus finibus convallis nulla non vehicula. Aliquam lacinia orci id imperdiet fermentum. Vestibulum vitae erat lacus. Nam et arcu at turpis viverra accumsan nec quis ligula. Nullam aliquam ac ante nec mollis. Sed sagittis libero quis facilisis aliquam. Nulla in pharetra mi, nec laoreet eros.","Praesent eget laoreet purus, eget gravida odio. Donec eu aliquam est. Integer bibendum tellus enim. Nulla ac lacus et sem suscipit sollicitudin id non quam. Curabitur auctor, risus a aliquam maximus, sem urna vulputate ipsum, et condimentum sem tellus ac neque. Vestibulum urna ligula, ornare quis egestas sed, gravida quis lorem. Donec placerat imperdiet massa at faucibus. Mauris at placerat velit. Fusce et mollis dui. Duis id lacus a sapien pellentesque gravida at ac nunc. Morbi ut tortor et nibh commodo bibendum. Suspendisse eu eros tincidunt, feugiat libero at, blandit leo. In ex lacus, ultrices et aliquam eget, maximus nec neque. Nulla vulputate turpis nec sem dapibus porttitor. Morbi aliquam ligula tortor, quis varius nulla lobortis quis."]],
+["Sameer Hits Balls",2,"http://i.imgur.com/y7PQTF7.jpg","March 6, 2016",["Vivamus vitae magna cursus, condimentum quam ac, maximus augue. Suspendisse congue consectetur magna id rutrum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer facilisis quam diam, eget mattis ipsum lobortis ut. Praesent nulla enim, tincidunt vel justo eget, aliquam tincidunt risus. Etiam suscipit, leo a tristique cursus, metus risus aliquet tellus, nec fermentum lorem lorem eu sem. Fusce elementum ipsum tincidunt ultrices ultrices. In vestibulum ultricies elementum. Quisque consectetur ut sapien sit amet facilisis."]],
+["Darren Throws Balls",1,"http://i.imgur.com/LiB1npZ.jpg","March 6, 2016",["Sed semper, sem vel vulputate fringilla, libero magna tincidunt tortor, a tincidunt enim enim suscipit ipsum. Praesent gravida diam pulvinar, dapibus leo sed, gravida leo. Donec aliquet elit enim, vel mattis orci condimentum non. Vestibulum tincidunt odio tellus, ut commodo purus consequat elementum. Suspendisse et lacus gravida magna gravida accumsan. Curabitur maximus risus sit amet malesuada maximus. Donec lobortis tristique eleifend.","Duis nec arcu at mauris auctor mollis. Nam condimentum, dolor ut hendrerit fermentum, orci risus hendrerit mi, ac sagittis nisi est sit amet nulla. Nullam a mollis magna. Donec sollicitudin fringilla leo rutrum suscipit. In vulputate mi odio, porta hendrerit dolor fringilla et. Aliquam euismod nunc felis, et dapibus nisi aliquet vel. Mauris vestibulum nisl id mauris iaculis elementum."]]]
+    return render_template('news.html',news=news)
 
 @app.route('/upload')
 def upload():
