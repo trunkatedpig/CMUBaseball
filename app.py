@@ -9,8 +9,8 @@ app.debug = True
 @app.route('/home')
 def index():
     articles=[["Zac Smiles at Camera",3,"http://i.imgur.com/P8nsRbX.jpg"],["Sameer Hits Balls",2,"http://i.imgur.com/y7PQTF7.jpg"],["Darren Throws Balls",1,"http://imgur.com/LiB1npZ.jpg"]]
-    games=[["Boyce","CMU",1,14,"October 16"],["CMU","George Mason",4,2,"March 6"],["Boston University","CMU",3,10,"March 6"],["VCU","CMU",14,17,"March 7"],["CMU","Xavier",4,15,"March 7"]]
-    schedule=[["at","Boyce","March 17"],["vs","Duqense","March 18"]]
+    games=[["CMU","Xavier",4,15,"March 7"],["VCU","CMU",14,17,"March 7"],["Boston University","CMU",3,10,"March 6"],["CMU","George Mason",4,2,"March 6"],["Boyce","CMU",1,14,"October 16"]]
+    schedule=[["vs","OSU","March 20"],["at","Boyce","March 26"],["vs","Duqense","March 27"]]
     return render_template('index.html', slides=articles, scores=games, schedule=schedule)
 
 @app.route('/stats')
@@ -21,7 +21,9 @@ def stats():
 
 @app.route('/schedule')
 def schedule():
-    return render_template('schedule.html')
+    upcoming=[["vs","OSU","March 20"],["at","Boyce","March 26"],["vs","Duqense","March 27"]]
+    scores=[["CMU","Xavier",4,15,"March 7"],["VCU","CMU",14,17,"March 7"],["Boston University","CMU",3,10,"March 6"],["CMU","George Mason",4,2,"March 6"],["Boyce","CMU",1,14,"October 16"]]
+    return render_template('schedule.html',upcoming=upcoming,scores=scores)
 
 @app.route('/roster')
 def roster():
