@@ -10,7 +10,7 @@ app.debug = True
 def index():
     articles=[["Zac Smiles at Camera",3,"http://i.imgur.com/P8nsRbX.jpg"],["Sameer Hits Balls",2,"http://i.imgur.com/y7PQTF7.jpg"],["Darren Throws Balls",1,"http://imgur.com/LiB1npZ.jpg"]]
     games=[["CMU","Xavier",4,15,"March 7"],["VCU","CMU",14,17,"March 7"],["Boston University","CMU",3,10,"March 6"],["CMU","George Mason",4,2,"March 6"],["Boyce","CMU",1,14,"October 16"]]
-    schedule=[["vs","OSU","March 20"],["at","Boyce","March 26"],["vs","Duqense","March 27"]]
+    schedule=[["vs","OSU","March 20",6],["at","Boyce","March 26",7],["vs","Duqense","March 27",8]]
     return render_template('index.html', slides=articles, scores=games, schedule=schedule)
 
 @app.route('/stats')
@@ -21,7 +21,7 @@ def stats():
 
 @app.route('/schedule')
 def schedule():
-    upcoming=[["vs","OSU","March 20"],["at","Boyce","March 26"],["vs","Duqense","March 27"]]
+    upcoming=[["vs","OSU","March 20",6],["at","Boyce","March 26",7],["vs","Duqense","March 27",8]]
     scores=[["CMU","Xavier",4,15,"March 7"],["VCU","CMU",14,17,"March 7"],["Boston University","CMU",3,10,"March 6"],["CMU","George Mason",4,2,"March 6"],["Boyce","CMU",1,14,"October 16"]]
     return render_template('schedule.html',upcoming=upcoming,scores=scores)
 
@@ -43,9 +43,10 @@ def news():
     return render_template('news.html',news=news)
 
 @app.route('/upload')
-def upload():
+def upload(): 
+    schedule=[["vs","OSU","March 20",6],["at","Boyce","March 26",7],["vs","Duqense","March 27",8]]
     players=["Alex Walenczyk","Morgan Dively","Darren Kerfoot","Zac Ettensohn"]
-    return render_template('upload.html', players=players)
+    return render_template('upload.html', players=players, schedule=schedule)
 
 @app.route('/zac')
 def zac():

@@ -17,7 +17,7 @@
   <button type="submit" class="pure-button pure-input pure-button-primary">Submit</button>
 </form>
 <br>
-<form class="pure-form pur-form-stacked">
+<form class="pure-form">
   <fieldset>
     <legend style="color:#FFFFFF">Add New Player</legend>
 
@@ -106,7 +106,116 @@
 <br>
 <form class="pure-form">
   <fieldset>
+    <legend style="color:#FFFFFF">Edit Player Info</legend>
+    
+    <label for="editPlayerName">Select Player</label>
+    <select id="editPlayerName">
+      {% for player in players %}<option>{{ player }}</option>{% endfor %}
+    </select>
+
+    <input id="editPlayerNumber" type="number" placeholder="Number">
+
+    <input id="editPlayerWeight" type="number" placeholder="Weight">
+
+    <label for="editPlayerHeightFeet">Height</label>
+    <select id="editPlayerHeightFeet">
+      <option>2'</option>
+      <option>3'</option>
+      <option>4'</option>
+      <option>5'</option>
+      <option>6'</option>
+      <option>7'</option>
+      <option>8'</option>
+    </select>
+    <select id="editHeightInches">
+      <option>0"</option>
+      <option>1"</option>
+      <option>2"</option>
+      <option>3"</option>
+      <option>4"</option>
+      <option>5"</option>
+      <option>6"</option>
+      <option>7"</option>
+      <option>8"</option>
+      <option>9"</option>
+      <option>10"</option>
+      <option>11"</option>
+      <option>12"</option>
+    </select>
+
+    <label for="editPlayerBats">Bats</label>
+    <select id="editPlayerBats">
+      <option>R</option>
+      <option>L</option>
+      <option>S</option>
+    </select>
+
+    <label for="editPlayerThrows">Throws</label>
+    <select id="editPlayerThrows">
+      <option>R</option>
+      <option>L</option>
+    </select>
+
+    <label for="editPlayerPosition">Position</label>
+    <select id="editPlayerPosition">
+      <option>P</option>
+      <option>C</option>
+      <option>1B</option>
+      <option>2B</option>
+      <option>3B</option>
+      <option>SS</option>
+      <option>LF</option>
+      <option>CF</option>
+      <option>RF</option>
+      <option>OF</option>
+      <option>IF</option>
+      <option>DH</option>
+    </select>
+
+    <label for="editPlayerPosition2">Secondary Position</label>
+    <select id="editPlayerPosition2">
+      <option>NA</option>
+      <option>P</option>
+      <option>C</option>
+      <option>1B</option>
+      <option>2B</option>
+      <option>3B</option>
+      <option>SS</option>
+      <option>LF</option>
+      <option>CF</option>
+      <option>RF</option>
+      <option>OF</option>
+      <option>IF</option>
+      <option>DH</option>
+    </select>
+  </fieldset>
+  <button type="submit" class="pure-button pure-input pure-button-primary">Submit</button>
+</form>
+<br>
+<form class="pure-form">
+  <fieldset>
+    <legend style="color:#FFFFFF">Schedule Game</legend>
+    <select id="scheduleHome"><option>Home</option><option>Away</option></select>
+    <input id="scheduleOpponent" type="text" placeholder="Opponent"></input>
+    <input id="scheduleDate" type="date"></input>
+    <input id="scheduleTime" type="time"></input>
+  </fieldset>
+  <button type="submit" class="pure-button pure-input pure-button-primary">Submit</button>
+</form>
+<br>
+<form class="pure-form">
+  <fieldset>
     <legend style="color:#FFFFFF">Enter Game Info</legend>
+    <label for="gameSelect">Select Game</label>
+    <select id="gameSelect">
+      {% for game in schedule %}
+      <option>{{ game[2] }} {{ game[0] }} {{ game[1] }}</option>
+      {% endfor %}
+    </select>
+    <label for="gameOurScore">CMU Score</label>
+    <input id="gameOurScore" type="number"></input>
+    <label for="gameTheirScore">Opponent Score</label>
+    <input id="gameTheirScore" type="number"></input>
     <table class="pure-table">
       <thead>
         <tr>
@@ -155,5 +264,6 @@
       </tbody>
     </table>
   </fieldset>
+  <button type="submit" class="pure-button pure-input pure-button-primary">Submit</button>
 </form>
 {% endblock bodycontent %}
