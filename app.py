@@ -34,7 +34,7 @@ Playernames = []
 for player in Players:
   Playernames.append([player[0],player[9]])
 Games=[["CMU","Xavier",4,15,"March 7"],["VCU","CMU",14,17,"March 7"],["Boston University","CMU",3,10,"March 6"],["CMU","George Mason",4,2,"March 6"],["Boyce","CMU",1,14,"October 16"]]
-Schedule=[["vs","OSU","March 20",6],["at","Boyce","March 26",7],["vs","Duqense","March 27",8]]
+Schedule=[["at","CCAC Boyce","March 26","12:00PM","",6],["at","CCAC Boyce","March 26","3:00 PM","",7],["vs","Duqense","April 2","12:00 PM","at Bellevue Memorial",8],["vs","Duqense","April 2","3:00 PM","at Bellevue Memorial",9],["vs","Duqense","April 3","12:00 PM","at Bellevue Memorial",10],["vs","Cal Pa.","April 9","12:00 PM","at Bellevue Memorial",11],["vs","Cal Pa.","April 9","3:00 PM","at Bellevue Memorial",12],["vs","Cal Pa.","April 10","10:00 AM","at Esmark Field",13],["vs","WVU","April 23","12:00 PM","At Bellevue Memorial",14],["vs","WVU","April 24","12:00 PM","at Bellevue Memorial",15],["vs","WVU","April 24","3:00 PM","at Bellevue Memorial",16]]
 Scores=[["CMU","Xavier",4,15,"March 7"],["VCU","CMU",14,17,"March 7"],["Boston University","CMU",3,10,"March 6"],["CMU","George Mason",4,2,"March 6"],["Boyce","CMU",1,14,"October 16"]]
 Hitters=[["Aaron Mortenson",4,12,10,0,2,0,0,0,1,2,7,0,0,'.200','.333','.200','.533']]
 Pitchers=[]
@@ -42,7 +42,7 @@ Pitchers=[]
 @app.route('/')
 @app.route('/home')
 def index():
-    return render_template('index.html', slides=Articles, scores=Games, schedule=Schedule)
+    return render_template('index.html', slides=Articles, scores=Games[:5], schedule=Schedule[:5])
 
 @app.route('/stats')
 def stats():
@@ -50,15 +50,15 @@ def stats():
 
 @app.route('/schedule')
 def schedule():
-    return render_template('schedule.html',upcoming=Schedule,scores=Scores)
+    return render_template('schedule.html',upcoming=Schedule)
 
 @app.route('/roster')
 def roster():
     return render_template('roster.html', players=Players)
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/scores')
+def scores():
+    return render_template('scores.html',scores=Scores)
 
 @app.route('/news')
 def news():

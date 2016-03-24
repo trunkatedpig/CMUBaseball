@@ -11,7 +11,7 @@
     <label for="gameSelect">Select Game</label>
     <select id="gameSelect">
       {% for game in schedule %}
-      <option>{{ game[2] }} {{ game[0] }} {{ game[1] }}</option>
+      <option>{{ game[2] }} {{ game[0] }} {{ game[1] }}, {{ game[3] }}</option>
       {% endfor %}
     </select>
     <label for="gameOurScore">CMU Score</label>
