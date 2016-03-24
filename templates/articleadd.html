@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block bodycontent %}
+<h1>Upload Article</h1>
+<form class="pure-form">
+  <fieldset class="pure-group">
+    <input id="articleTitle" type="text" class="pure-input-1" placeholder="Title">
+    <input id="articleImage" type="text" class="pure-input-1" placeholder="Image Link">
+    <textarea id="articleText" class="pure-input-1" placeholder="Text"></textarea>
+  </fieldset>
+  <button type="submit" class="pure-button pure-input pure-button-primary">Submit</button>
+</form>
+{% endblock bodycontent %}

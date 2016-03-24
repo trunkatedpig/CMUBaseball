@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block bodycontent %}
+<h1>Add Player</h1>
+<form class="pure-form">
+  <fieldset>
+    <input id="playerFirst" type="text" placeholder="First Name">
+
+    <input id="playerLast" type="text" placeholder="Last Name">
+
+    <input id="playerNumber" type="number" placeholder="Number">
+
+    <input id="playerWeight" type="number" placeholder="Weight">
+
+    <label for="playerHeightFeet">Height</label>
+    <select id="playerHeightFeet">
+      <option>2'</option>
+      <option>3'</option>
+      <option>4'</option>
+      <option>5'</option>
+      <option>6'</option>
+      <option>7'</option>
+      <option>8'</option>
+    </select>
+    <select id="heightInches">
+      <option>0"</option>
+      <option>1"</option>
+      <option>2"</option>
+      <option>3"</option>
+      <option>4"</option>
+      <option>5"</option>
+      <option>6"</option>
+      <option>7"</option>
+      <option>8"</option>
+      <option>9"</option>
+      <option>10"</option>
+      <option>11"</option>
+      <option>12"</option>
+    </select>
+
+    <label for="playerBats">Bats</label>
+    <select id="playerBats">
+      <option>R</option>
+      <option>L</option>
+      <option>S</option>
+    </select>
+
+    <label for="playerThrows">Throws</label>
+    <select id="playerThrows">
+      <option>R</option>
+      <option>L</option>
+    </select>
+
+    <label for="playerPosition">Position</label>
+    <select id="playerPosition">
+      <option>P</option>
+      <option>C</option>
+      <option>1B</option>
+      <option>2B</option>
+      <option>3B</option>
+      <option>SS</option>
+      <option>LF</option>
+      <option>CF</option>
+      <option>RF</option>
+      <option>OF</option>
+      <option>IF</option>
+      <option>DH</option>
+    </select>
+
+    <label for="playerPosition2">Secondary Position</label>
+    <select id="playerPosition2">
+      <option>NA</option>
+      <option>P</option>
+      <option>C</option>
+      <option>1B</option>
+      <option>2B</option>
+      <option>3B</option>
+      <option>SS</option>
+      <option>LF</option>
+      <option>CF</option>
+      <option>RF</option>
+      <option>OF</option>
+      <option>IF</option>
+      <option>DH</option>
+    </select>
+  </fieldset>
+  <button type="submit" class="pure-button pure-input pure-button-primary">Submit</button>
+</form>
+{% endblock bodycontent %}

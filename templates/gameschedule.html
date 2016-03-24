@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block bodycontent %}
+<h1>Schedule Game</h1>
+<form class="pure-form">
+  <fieldset>
+    <select id="scheduleHome"><option>Home</option><option>Away</option></select>
+    <input id="scheduleOpponent" type="text" placeholder="Opponent"></input>
+    <input id="scheduleDate" type="date"></input>
+    <input id="scheduleTime" type="time"></input>
+  </fieldset>
+  <button type="submit" class="pure-button pure-input pure-button-primary">Submit</button>
+</form>
+{% endblock bodycontent %}
