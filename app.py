@@ -15,9 +15,9 @@ Players = [["Aaron Mortenson","http://i.imgur.com/UR6rM48.jpg","30","OF","Freshm
           ["Paul Benoit","IMAGE HERE","","OF","Freshman","R","R",'''5'10"''',"150",4],
           ["Zachary Ettensohn","IMAGE HERE","9","1B","Sophomore","L","L",'''6'5"''',"195",5],
           ["Kellen Carleton","IMAGE HERE","","INF","Sophomore","R","R",'''5'11"''',"215",6],
-          ["Rainer Nunez","IMAGE HERE","15","P/INF","Sophomore","R","R",'''5'9"''',"195",7],
+          ["Rainer Nunez","IMAGE HERE","15","P/INF","Sophomore","R","R",'''5'9"''',"184",7],
           ["Drew Himmelrich","IMAGE HERE","","INF","Sophomore","R","R",'''6'0"''',"180",8],
-          ["Nick Halbedl","IMAGE HERE","25","OF","Junior","L","R",'''6'0"''',"195",9],
+          ["Nick Halbedl","IMAGE HERE","25","OF","Junior","L","R",'''5'9"''',"195",9],
           ["Travis Andring","IMAGE HERE","1","1B","Junior","L","R",'''6'2"''',"235",10],
           ["Sameer Kolluri","IMAGE HERE","55","1B","Sophomore","R","R",'''5'11"''',"205",11],
           ["Cameron Dively","IMAGE HERE","6","C","Sophomore","R","R",'''6'3"''',"205",12],
@@ -33,10 +33,10 @@ Players = [["Aaron Mortenson","http://i.imgur.com/UR6rM48.jpg","30","OF","Freshm
 Playernames = []
 for player in Players:
   Playernames.append([player[0],player[9]])
-Games=[["CMU","Xavier",4,15,"March 7"],["VCU","CMU",14,17,"March 7"],["Boston University","CMU",3,10,"March 6"],["CMU","George Mason",4,2,"March 6"],["Boyce","CMU",1,14,"October 16"]]
-Schedule=[["at","CCAC Boyce","March 26","12:00PM","",6],["at","CCAC Boyce","March 26","3:00 PM","",7],["vs","Duqense","April 2","12:00 PM","at Bellevue Memorial",8],["vs","Duqense","April 2","3:00 PM","at Bellevue Memorial",9],["vs","Duqense","April 3","12:00 PM","at Bellevue Memorial",10],["vs","Cal Pa.","April 9","12:00 PM","at Bellevue Memorial",11],["vs","Cal Pa.","April 9","3:00 PM","at Bellevue Memorial",12],["vs","Cal Pa.","April 10","10:00 AM","at Esmark Field",13],["vs","WVU","April 23","12:00 PM","At Bellevue Memorial",14],["vs","WVU","April 24","12:00 PM","at Bellevue Memorial",15],["vs","WVU","April 24","3:00 PM","at Bellevue Memorial",16]]
-Scores=[["CMU","Xavier",4,15,"March 7"],["VCU","CMU",14,17,"March 7"],["Boston University","CMU",3,10,"March 6"],["CMU","George Mason",4,2,"March 6"],["Boyce","CMU",1,14,"October 16"]]
-Hitters=[["Aaron Mortenson",4,12,10,0,2,0,0,0,1,2,7,0,0,'.200','.333','.200','.533']]
+Games=[["CMU","CCAC Boyce",7,1,"March 26",6],["CMU","CCAC Boyce",12,1,"March 26",5],["CMU","Xavier",4,15,"March 7",4],["VCU","CMU",14,17,"March 7",3],["Boston University","CMU",3,13,"March 6",2],["CMU","George Mason",4,2,"March 6",1]]
+Schedule=[["vs","Duquense","April 2","12:00 PM","at Bellevue Memorial",7],["vs","Duquense","April 2","3:00 PM","at Bellevue Memorial",8],["vs","Duquense","April 3","12:00 PM","at Bellevue Memorial",9],["vs","Cal Pa.","April 9","12:00 PM","at Bellevue Memorial",10],["vs","Cal Pa.","April 9","3:00 PM","at Bellevue Memorial",11],["vs","Cal Pa.","April 10","10:00 AM","at Esmark Field",12],["vs","WVU","April 23","12:00 PM","At Bellevue Memorial",13],["vs","WVU","April 24","12:00 PM","at Bellevue Memorial",14],["vs","WVU","April 24","3:00 PM","at Bellevue Memorial",15]]
+#Hitters=[["Aaron Mortenson",4,12,10,0,2,0,0,0,1,2,7,0,0,'.200','.333','.200','.533']]
+Hitters=[]
 Pitchers=[]
 
 @app.route('/')
@@ -58,7 +58,7 @@ def roster():
 
 @app.route('/scores')
 def scores():
-    return render_template('scores.html',scores=Scores)
+    return render_template('scores.html',scores=Games)
 
 @app.route('/news')
 def news():
