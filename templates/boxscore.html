@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block bodycontent %}
+<div class="pure-u-1" style="color:black; background-color: white; padding: 5px;">
+  <h1>{{ game[0] }} {{ game[2] }}, {{ game[1] }} {{ game[3] }}</h1>
+  <h4 style="position:relative; top:-10px; left: 10px;">{{ game[4] }}</h4>
+  <table class="pure-table" style="background-color:white;">
+    <thead>
+      <tr>
+        <th></th>
+        {% for inning in game[9] %}
+        <th>{{ loop.index }}</th>
+        {% endfor %}
+        <th>R</th>
+        <th>H</th>
+        <th>E</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>{{ game[0] }}</td>
+      {% for inning in game[9] %}
+      <td>{{ inning[0] }}</td>
+      {% endfor %}
+      <td>{{ game[7][0] }}</td>
+      <td>{{ game[7][1] }}</td>
+      <td>{{ game[7][2] }}</td>
+      </tr>
+      <tr>
+      <td>{{ game[1] }}</td>
+      {% for inning in game[9] %}
+      <td>{{ inning[1] }}</td>
+      {% endfor %}
+      <td>{{ game[8][0] }}</td>
+      <td>{{ game[8][1] }}</td>
+      <td>{{ game[8][2] }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <table class="pure-table" style="background-color:white;">
+  <thead>
+    <tr>
+      <th>Batting</th>
+      <th>Pos</th>
+      <th>PA</th>
+      <th>AB</th>
+      <th>R</th>
+      <th>H</th>
+      <th>2B</th>
+      <th>3B</th>
+      <th>HR</th>
+      <th>RBI</th>
+      <th>BB</th>
+      <th>SO</th>
+      <th>SB</th>
+      <th>CS</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for Hitter in game[10] %}
+    <tr>
+      <td>{{ Hitter[1] }}, {{ Hitter[3] }}</td>
+      <td>{{ Hitter[2] }}</td>
+      <td>{{ Hitter[4] }}</td>
+      <td>{{ Hitter[5] }}</td>
+      <td>{{ Hitter[6] }}</td>
+      <td>{{ Hitter[7] }}</td>
+      <td>{{ Hitter[8] }}</td>
+      <td>{{ Hitter[9] }}</td>
+      <td>{{ Hitter[10] }}</td>
+      <td>{{ Hitter[11] }}</td>
+      <td>{{ Hitter[12] }}</td>
+      <td>{{ Hitter[13] }}</td>
+      <td>{{ Hitter[14] }}</td>
+      <td>{{ Hitter[15] }}</td>
+    </tr>
+    {% endfor %}  
+  </tbody>
+  </table>
+  <br>
+<table class="pure-table" style="background-color:white;">
+  <thead>
+    <tr>
+      <th>Pitching</th>
+      <th>IP</th>
+      <th>H</th>
+      <th>R</th>
+      <th>ER</th>
+      <th>HR</th>
+      <th>BB</th>
+      <th>SO</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for Pitcher in game[11] %}
+    <tr>
+      <td>{{ Pitcher[1] }}, {{ Pitcher[2] }}</td>
+      <td>{{ Pitcher[9] // 3 }}.{{ Pitcher[9] % 3 }}</td>
+      <td>{{ Pitcher[10]}}</td>
+      <td>{{ Pitcher[11]}}</td>
+      <td>{{ Pitcher[12]}}</td>
+      <td>{{ Pitcher[13]}}</td>
+      <td>{{ Pitcher[14]}}</td>
+      <td>{{ Pitcher[15]}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock bodycontent %}

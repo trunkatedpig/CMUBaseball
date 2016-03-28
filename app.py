@@ -10,7 +10,7 @@ Articles=[]
 for article in News:
   Articles.append(article[:3])
 Players = [["Aaron Mortenson","http://i.imgur.com/UR6rM48.jpg","30","OF","Freshman","R","R",'''6'0"''',"195",0],
-          ["Tahj Spinger","http://i.imgur.com/xnSAFPh.jpg","42","INF","Freshman","R","R",'''5'10"''',"145",1],
+          ["Tahj Spigner","http://i.imgur.com/xnSAFPh.jpg","42","INF","Freshman","R","R",'''5'10"''',"145",1],
           ["Morgan Dively","IMAGE HERE","2","INF","Sophomore","R","R",'''6'0"''',"190",2],
           ["Paul Benoit","IMAGE HERE","","OF","Freshman","R","R",'''5'10"''',"150",3],
           ["Zachary Ettensohn","IMAGE HERE","9","1B","Sophomore","L","L",'''6'5"''',"195",4],
@@ -44,7 +44,7 @@ Games=[["CMU","CCAC Boyce",7,1,"March 26",6,True,[7,10,0],[1,7,1],[[0,0],[1,0],[
           [13,"Alex Walenczyk","CF","3"  ,4,4,0,2,1,0,0,0,0,1,0,1],
           [4,"Zachary Ettensohn","1B","9",4,3,1,2,0,0,0,0,1,1,0,0],
           [16,"Josh Solarek","C","12"    ,4,1,3,0,0,0,0,0,3,0,1,0],
-          [1,"Tahj Spinger","2B","42"   ,4,3,1,2,0,0,0,0,1,0,1,0],
+          [1,"Tahj Spigner","2B","42"   ,4,3,1,2,0,0,0,0,1,0,1,0],
           [19,"Bryant Brackus","DH","23" ,4,2,0,0,0,0,0,2,1,0,0,2],
           [18,"Jacob Johnson","SS","30"  ,4,3,1,1,0,0,0,1,1,2,1,0],
           [11,"Cameron Dively","RF","6"  ,4,3,1,0,0,0,0,0,1,3,0,0],
@@ -58,7 +58,7 @@ Games=[["CMU","CCAC Boyce",7,1,"March 26",6,True,[7,10,0],[1,7,1],[[0,0],[1,0],[
           [4,"Zachary Ettensohn","1B","9" ,5,4,0,1,0,0,0,0,1,1,0,0],
           [16,"Josh Solarek","C","12"     ,4,4,2,2,1,0,0,0,0,0,0,0],
           [8,"Nick Halbedl","RF","25"     ,4,3,0,0,0,0,0,0,1,1,0,0],
-          [1,"Tahj Spinger","2B","42"    ,3,2,1,0,0,0,0,1,1,0,2,0],
+          [1,"Tahj Spigner","2B","42"    ,3,2,1,0,0,0,0,1,1,0,2,0],
           [20,"Hidetaka Okamura","2B","11",1,0,1,0,0,0,0,0,1,0,0,0],
           [11,"Cameron Dively","EH","6"   ,4,2,1,0,0,0,0,0,2,2,1,0],
           [19,"Bryant Brackus","P","23"   ,4,4,3,3,1,0,0,1,0,0,1,0],
