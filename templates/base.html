@@ -65,29 +65,29 @@
     <header style="position: fixed; width:100%; margin-top:-20px; background-color:#464646; color:#FFFFFF">
       {% block header %}
       <div id="top">
-        <img src="static/img/plaid_digital_small.png" style="position:relative; left:0%; top:5px; width:338px"></img>
+        <img src="/static/img/plaid_digital_small.png" style="position:relative; left:0%; top:5px; width:338px"></img>
         <div id="grad1"></div>
-        <img src="static/img/plaid_digital_small_reverse.png" style="position:absolute; right:0%; top:5px; width:338px"></img>
+        <img src="/static/img/plaid_digital_small_reverse.png" style="position:absolute; right:0%; top:5px; width:338px"></img>
         <div id="grad2"></div>
         <div id="title">
           Carnegie Mellon Baseball
-          <a href="home"><img src="static/img/Tartan.png" style="position: absolute; left:50%; transform:translateX(-50%); width:30%"></img></a>
+          <a href="/home"><img src="/static/img/Tartan.png" style="position: absolute; left:50%; transform:translateX(-50%); width:30%"></img></a>
         </div>
       </div>
       <div style="position:relative">
         <div class="pure-menu pure-menu-horizontal" style="position:absolute; width:100%; height: 31px; background-color:#990000"></div>
         <div id="bar1" class="pure-menu pure-menu-horizontal">
             {% block navbar_left %}
-            <a href="schedule" class="pure-menu-heading pure-menu-link" style="color: #ffffff; float:right">Schedule</a>
-            <a href="stats" class="pure-menu-heading pure-menu-link" style="color: #ffffff; float:right">Stats</a>
-            <a href="home" class="pure-menu-heading pure-menu-link" style="color: #ffffff; float:right">Home</a>
+            <a href="/schedule" class="pure-menu-heading pure-menu-link" style="color: #ffffff; float:right">Schedule</a>
+            <a href="/stats" class="pure-menu-heading pure-menu-link" style="color: #ffffff; float:right">Stats</a>
+            <a href="/home" class="pure-menu-heading pure-menu-link" style="color: #ffffff; float:right">Home</a>
             {% endblock navbar_left %}
         </div>
         <div id="bar2" class="pure-menu pure-menu-horizontal">
             {% block navbar_right %}
-            <a href="roster" class="pure-menu-heading pure-menu-link" style="color: #ffffff">Roster</a>
-            <a href="scores" class="pure-menu-heading pure-menu-link" style="color: #ffffff">Scores</a>
-            <a href="news" class="pure-menu-heading pure-menu-link" style="color: #ffffff">News</a>
+            <a href="/roster" class="pure-menu-heading pure-menu-link" style="color: #ffffff">Roster</a>
+            <a href="/scores" class="pure-menu-heading pure-menu-link" style="color: #ffffff">Scores</a>
+            <a href="/news" class="pure-menu-heading pure-menu-link" style="color: #ffffff">News</a>
             {% endblock navbar_right %}
         </div>
       </div>
@@ -99,6 +99,7 @@
         {% block bodycontent %}
         {% endblock bodycontent %}
       </div>
+      <div class="pure-u-1-8"></div>
       <div style="background-color:black; width:100%; height:62px;"></div>
       <div class="pure-menu pure-menu-horizontal" style="position: fixed; background-color:#990000; width:100%; height:31px; bottom:0px; left:0px;"></div>
     </main>
