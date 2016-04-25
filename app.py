@@ -17,8 +17,8 @@ Players = [
           ["Zachary Ettensohn","http://i.imgur.com/BBTdWzt.png","9","1B","Sophomore","L","L",'''6'5"''',"195",4],
           ["Lesther Martinez","http://i.imgur.com/ceEI65D.png","11","INF","Junior","R","R",'''5'5"''',"138",12],
           ["Rainer Nunez","IMAGE HERE","15","P/INF","Sophomore","R","R",'''5'9"''',"184",6],
-          ["Darren Kerfoot","IMAGE HERE","20","P/INF","Senior","R","R",'''6'0"''',"205",14],
-          ["Bryant Brackus","IMAGE HERE","23","P/OF","Sophomore","R","R",'''6'3"''',"200",19],
+          ["Darren Kerfoot","http://imgur.com/aAWkLOP","20","P/INF","Senior","R","R",'''6'0"''',"205",14],
+          ["Bryant Brackus","http://imgur.com/PLPhQuo","23","P/OF","Sophomore","R","R",'''6'3"''',"200",19],
           ["Nick Halbedl","IMAGE HERE","25","OF","Junior","L","R",'''5'9"''',"195",8],
           ["Drew Fitzmorris","IMAGE HERE","26","OF","Sophomore","R","R",'''5'11"''',"190",15],
           ["Aaron Mortenson","http://i.imgur.com/nnzRl4k.png","30","OF","Freshman","R","R",'''6'0"''',"195",0],
@@ -26,9 +26,9 @@ Players = [
           ["Jacob Johnson","IMAGE HERE","55","P/INF","Sophomore","R","R",'''5'11"''',"180",18],
           ["Paul Benoit","IMAGE HERE","","OF","Freshman","R","R",'''5'10"''',"150",3],
           ["Kellen Carleton","IMAGE HERE","","INF","Sophomore","R","R",'''5'11"''',"215",5],
-          ["Drew Himmelrich","IMAGE HERE","","INF","Sophomore","R","R",'''6'0"''',"180",7],
+          ["Drew Himmelrich","http://imgur.com/vkfKnyN","","INF","Sophomore","R","R",'''6'0"''',"180",7],
           ["Travis Andring","IMAGE HERE","","1B","Junior","L","R",'''6'2"''',"235",9],
-          ["Josh Solarek","IMAGE HERE","","C/OF","Sophomore","R","R",'''5'11"''',"190",16],
+          ["Josh Solarek","http://imgur.com/TSBtmiw","","C/OF","Sophomore","R","R",'''5'11"''',"190",16],
           ["John Ciaccio","IMAGE HERE","","P/INF","Sophomore","R","R",'''6'0"''',"190",17],
           ["Hidetaka Okamura","IMAGE HERE","","IF","Senior","R","R",'''6'1"''',"147",20]]
 
