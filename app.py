@@ -1,45 +1,29 @@
 from flask import Flask, render_template
+from get_data import get_site_data
+
 
 app = Flask(__name__)
 app.debug = True
 
-News=[["Zac Smiles at Camera",3,"http://i.imgur.com/P8nsRbX.jpg","March 7, 2016",["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer venenatis ligula ac leo feugiat, eu dignissim arcu sollicitudin. Aliquam vulputate tempor scelerisque. Phasellus finibus convallis nulla non vehicula. Aliquam lacinia orci id imperdiet fermentum. Vestibulum vitae erat lacus. Nam et arcu at turpis viverra accumsan nec quis ligula. Nullam aliquam ac ante nec mollis. Sed sagittis libero quis facilisis aliquam. Nulla in pharetra mi, nec laoreet eros.","Praesent eget laoreet purus, eget gravida odio. Donec eu aliquam est. Integer bibendum tellus enim. Nulla ac lacus et sem suscipit sollicitudin id non quam. Curabitur auctor, risus a aliquam maximus, sem urna vulputate ipsum, et condimentum sem tellus ac neque. Vestibulum urna ligula, ornare quis egestas sed, gravida quis lorem. Donec placerat imperdiet massa at faucibus. Mauris at placerat velit. Fusce et mollis dui. Duis id lacus a sapien pellentesque gravida at ac nunc. Morbi ut tortor et nibh commodo bibendum. Suspendisse eu eros tincidunt, feugiat libero at, blandit leo. In ex lacus, ultrices et aliquam eget, maximus nec neque. Nulla vulputate turpis nec sem dapibus porttitor. Morbi aliquam ligula tortor, quis varius nulla lobortis quis."]],
-["Sameer Hits Balls",2,"http://i.imgur.com/y7PQTF7.jpg","March 6, 2016",["Vivamus vitae magna cursus, condimentum quam ac, maximus augue. Suspendisse congue consectetur magna id rutrum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer facilisis quam diam, eget mattis ipsum lobortis ut. Praesent nulla enim, tincidunt vel justo eget, aliquam tincidunt risus. Etiam suscipit, leo a tristique cursus, metus risus aliquet tellus, nec fermentum lorem lorem eu sem. Fusce elementum ipsum tincidunt ultrices ultrices. In vestibulum ultricies elementum. Quisque consectetur ut sapien sit amet facilisis."]],
-["Darren Throws Balls",1,"http://i.imgur.com/LiB1npZ.jpg","March 6, 2016",["Sed semper, sem vel vulputate fringilla, libero magna tincidunt tortor, a tincidunt enim enim suscipit ipsum. Praesent gravida diam pulvinar, dapibus leo sed, gravida leo. Donec aliquet elit enim, vel mattis orci condimentum non. Vestibulum tincidunt odio tellus, ut commodo purus consequat elementum. Suspendisse et lacus gravida magna gravida accumsan. Curabitur maximus risus sit amet malesuada maximus. Donec lobortis tristique eleifend.","Duis nec arcu at mauris auctor mollis. Nam condimentum, dolor ut hendrerit fermentum, orci risus hendrerit mi, ac sagittis nisi est sit amet nulla. Nullam a mollis magna. Donec sollicitudin fringilla leo rutrum suscipit. In vulputate mi odio, porta hendrerit dolor fringilla et. Aliquam euismod nunc felis, et dapibus nisi aliquet vel. Mauris vestibulum nisl id mauris iaculis elementum."]]]
-Articles=[]
-for article in News:
-  Articles.append(article[:3])
-Players = [
-          ["Sameer Kolluri"   ,"http://i.imgur.com/V26FOLT.png","1" ,"1B"   ,"Sophomore","R","R",'''5'11"''',"205",  0],
-          ["Morgan Dively"    ,"http://i.imgur.com/52xFN76.png","2" ,"INF"  ,"Sophomore","R","R",'''6'0"''' ,"190",  1],
-          ["Alex Walenczyk"   ,"http://i.imgur.com/9bWiCbq.png","3" ,"OF"   ,"Junior"   ,"R","R",'''5'9"''' ,"165",  2],
-          ["Cameron Dively"   ,"http://i.imgur.com/0sF7VAd.png","6" ,"C"    ,"Sophomore","R","R",'''6'3"''' ,"205",  3],
-          ["Zachary Ettensohn","http://i.imgur.com/BBTdWzt.png","9" ,"1B"   ,"Sophomore","L","L",'''6'5"''' ,"195",  4],
-          ["Lesther Martinez" ,"http://i.imgur.com/ceEI65D.png","11","INF"  ,"Junior"   ,"R","R",'''5'5"''' ,"138",  5],
-          ["Rainer Nunez"     ,"IMAGE HERE"                    ,"15","P/INF","Sophomore","R","R",'''5'9"''' ,"184",  6],
-          ["Darren Kerfoot"   ,"http://i.imgur.com/aAWkLOP.png","20","P/INF","Senior"   ,"R","R",'''6'0"''' ,"205",  7],
-          ["Bryant Brackus"   ,"http://i.imgur.com/PLPhQuo.png","23","P/OF" ,"Sophomore","R","R",'''6'3"''' ,"200",  8],
-          ["Nick Halbedl"     ,"IMAGE HERE"                    ,"25","OF"   ,"Junior"   ,"L","R",'''5'9"''' ,"195",  9],
-          ["Drew Fitzmorris"  ,"IMAGE HERE"                    ,"26","OF"   ,"Sophomore","R","R",'''5'11"''',"190", 10],
-          ["Aaron Mortenson"  ,"http://i.imgur.com/nnzRl4k.png","30","OF"   ,"Freshman" ,"R","R",'''6'0"''' ,"195", 11],
-          ["Tahj Spigner"     ,"http://i.imgur.com/VGyvxWO.png","42","INF"  ,"Freshman" ,"R","R",'''5'10"''',"145", 12],
-          ["Jacob Johnson"    ,"IMAGE HERE"                    ,"55","P/INF","Sophomore","R","R",'''5'11"''',"180", 13],
-          ["Paul Benoit"      ,"IMAGE HERE"                    ,""  ,"OF"   ,"Freshman" ,"R","R",'''5'10"''',"150", 14],
-          ["Kellen Carleton"  ,"IMAGE HERE"                    ,""  ,"INF"  ,"Sophomore","R","R",'''5'11"''',"215", 15],
-          ["Drew Himmelrich"  ,"http://i.imgur.com/vkfKnyN.png",""  ,"INF"  ,"Sophomore","R","R",'''6'0"''' ,"180", 16],
-          ["Travis Andring"   ,"IMAGE HERE"                    ,""  ,"1B"   ,"Junior"   ,"L","R",'''6'2"''' ,"235", 17],
-          ["Josh Solarek"     ,"http://i.imgur.com/TSBtmiw.png",""  ,"C/OF" ,"Sophomore","R","R",'''5'11"''',"190", 18],
-          ["John Ciaccio"     ,"IMAGE HERE"                    ,""  ,"P/INF","Sophomore","R","R",'''6'0"''' ,"190", 19],
-          ["Hidetaka Okamura" ,"IMAGE HERE"                    ,""  ,"IF"   ,"Senior"   ,"R","R",'''6'1"''' ,"147", 20]]
+def load_data():
+  raw_data = get_site_data('1QiViqtow-j8fBWSPgtBuwg7NUu2BCykjYKYr1zwGU9Q')
 
-Playernames = []
-for player in Players:
-  Playernames.append([player[0],player[9]])
+  Players = raw_data[1]
+  Schedule = raw_data[2]
+  News = raw_data[3]
+
+  Articles=[]
+  for article in News:
+    Articles.append(article[:3])
+
+  Playernames = []
+  for player in Players:
+    Playernames.append([player[0],player[9]])
 
 #[0:AWAY,1:HOME,2:AWAYSCORE,3:HOMESCORE,4:DATE,5:ID,6:WIN(bool),7:AWAY[R,H,E],8:HOME[R,H,E],9:INNINGS[[A,H],[A,H],...],10:HITTERS[ID,NAME,POS,NUMBER,STATS],11:PITCHERS[ID,NAME,NUMBER,STATS]]
 #STATS:[PA,AB,R,H,2B,3B,HR,RBI,BB,SO,SB,CS]
 #STATS:[W,L,GS,CG,SHO,SV,OUTS,H,R,ER,HR,BB,SO]
-Games=[["CMU","CCAC Boyce",7,1,"March 26",6,True,[7,10,0],[1,7,1],[[0,0],[1,0],[0,0],[3,0],[0,0],[2,0],[1,1]],
+  Games=[["CMU","CCAC Boyce",7,1,"March 26",6,True,[7,10,0],[1,7,1],[[0,0],[1,0],[0,0],[3,0],[0,0],[2,0],[1,1]],
          [[10,"Drew Fitzmorris","LF","26",4,3,0,1,0,1,0,0,1,1,1,0],
           [ 1,"Morgan Dively","3B","2"    ,4,3,0,0,0,0,0,0,1,0,0,0],
           [ 2,"Alex Walenczyk","CF","3"  ,4,4,0,2,1,0,0,0,0,1,0,1],
@@ -71,73 +55,66 @@ Games=[["CMU","CCAC Boyce",7,1,"March 26",6,True,[7,10,0],[1,7,1],[[0,0],[1,0],[
        ["Boston University","CMU",3,13,"March 6",2,True,[0,0,0],[0,0,0],[],[],[]],
        ["CMU","George Mason",4,2,"March 6",1,True,[0,0,0],[0,0,0],[],[],[]]]
 
-Schedule=[["vs","Duquense","April 2","12:00 PM","at Bellevue Memorial",7],
-          ["vs","Duquense","April 2","3:00 PM","at Bellevue Memorial",8],
-          ["vs","Duquense","April 3","12:00 PM","at Bellevue Memorial",9],
-          ["vs","Cal Pa.","April 9","12:00 PM","at Bellevue Memorial",10],
-          ["vs","Cal Pa.","April 9","3:00 PM","at Bellevue Memorial",11],
-          ["vs","Cal Pa.","April 10","10:00 AM","at Esmark Field",12],
-          ["vs","WVU","April 23","12:00 PM","At Bellevue Memorial",13],
-          ["vs","WVU","April 24","12:00 PM","at Bellevue Memorial",14],
-          ["vs","WVU","April 24","3:00 PM","at Bellevue Memorial",15]]
 #Hitters=[["Aaron Mortenson",4,12,10,0,2,0,0,0,1,2,7,0,0,'.200','.333','.200','.533']]
-Hitters=[]
-Pitchers=[]
-for player in Players:
-  Hitters.append([])
-  Pitchers.append([])
-  Hitters[player[9]] = [player[0],0,0,0,0,0,0,0,0,0,0,0,0,0,'.000','.000','.000','.000']
-  Pitchers[player[9]] = [player[0],0,0,'0.00',0,0,0,0,0,0,0,0,0,0,0,0,'.000','0.00']
+  Hitters= [None] * len(Players)
+  Pitchers= [None] * len(Players)
+  for player in Players:
+    Hitters[player[9]] = [player[0],0,0,0,0,0,0,0,0,0,0,0,0,0,'.000','.000','.000','.000']
+    Pitchers[player[9]] = [player[0],0,0,'0.00',0,0,0,0,0,0,0,0,0,0,0,0,'.000','0.00']
 
-for game in Games:
-  for hitter in game[10]:
-    Hitters[hitter[0]][1]+=1 #G
-    Hitters[hitter[0]][2]+=hitter[4] #PA
-    Hitters[hitter[0]][3]+=hitter[5] #AB
-    Hitters[hitter[0]][4]+=hitter[6] #R
-    Hitters[hitter[0]][5]+=hitter[7] #H
-    Hitters[hitter[0]][6]+=hitter[8] #2B
-    Hitters[hitter[0]][7]+=hitter[9] #3B
-    Hitters[hitter[0]][8]+=hitter[10] #HR
-    Hitters[hitter[0]][9]+=hitter[11] #RBI
-    Hitters[hitter[0]][10]+=hitter[12] #BB
-    Hitters[hitter[0]][11]+=hitter[13] #SO
-    Hitters[hitter[0]][12]+=hitter[14] #SB
-    Hitters[hitter[0]][13]+=hitter[15] #CS
-  for pitcher in game[11]:
-    Pitchers[pitcher[0]][1]+=pitcher[3] #W
-    Pitchers[pitcher[0]][2]+=pitcher[4] #L
-    Pitchers[pitcher[0]][4]+=1 #G
-    Pitchers[pitcher[0]][5]+=pitcher[5] #GS
-    Pitchers[pitcher[0]][6]+=pitcher[6] #CG
-    Pitchers[pitcher[0]][7]+=pitcher[7] #SHO
-    Pitchers[pitcher[0]][8]+=pitcher[8] #SV
-    Pitchers[pitcher[0]][9]+=pitcher[9] #IP(OUTS)
-    Pitchers[pitcher[0]][10]+=pitcher[10] #H
-    Pitchers[pitcher[0]][11]+=pitcher[11] #R
-    Pitchers[pitcher[0]][12]+=pitcher[12] #ER
-    Pitchers[pitcher[0]][13]+=pitcher[13] #HR
-    Pitchers[pitcher[0]][14]+=pitcher[14] #BB
-    Pitchers[pitcher[0]][15]+=pitcher[15] #SO
+  for game in Games:
+    for hitter in game[10]:
+      Hitters[hitter[0]][1]+=1 #G
+      Hitters[hitter[0]][2]+=hitter[4] #PA
+      Hitters[hitter[0]][3]+=hitter[5] #AB
+      Hitters[hitter[0]][4]+=hitter[6] #R
+      Hitters[hitter[0]][5]+=hitter[7] #H
+      Hitters[hitter[0]][6]+=hitter[8] #2B
+      Hitters[hitter[0]][7]+=hitter[9] #3B
+      Hitters[hitter[0]][8]+=hitter[10] #HR
+      Hitters[hitter[0]][9]+=hitter[11] #RBI
+      Hitters[hitter[0]][10]+=hitter[12] #BB
+      Hitters[hitter[0]][11]+=hitter[13] #SO
+      Hitters[hitter[0]][12]+=hitter[14] #SB
+      Hitters[hitter[0]][13]+=hitter[15] #CS
+    for pitcher in game[11]:
+      Pitchers[pitcher[0]][1]+=pitcher[3] #W
+      Pitchers[pitcher[0]][2]+=pitcher[4] #L
+      Pitchers[pitcher[0]][4]+=1 #G
+      Pitchers[pitcher[0]][5]+=pitcher[5] #GS
+      Pitchers[pitcher[0]][6]+=pitcher[6] #CG
+      Pitchers[pitcher[0]][7]+=pitcher[7] #SHO
+      Pitchers[pitcher[0]][8]+=pitcher[8] #SV
+      Pitchers[pitcher[0]][9]+=pitcher[9] #IP(OUTS)
+      Pitchers[pitcher[0]][10]+=pitcher[10] #H
+      Pitchers[pitcher[0]][11]+=pitcher[11] #R
+      Pitchers[pitcher[0]][12]+=pitcher[12] #ER
+      Pitchers[pitcher[0]][13]+=pitcher[13] #HR
+      Pitchers[pitcher[0]][14]+=pitcher[14] #BB
+      Pitchers[pitcher[0]][15]+=pitcher[15] #SO
 
-Hitters = filter(lambda x: x[1] != 0, Hitters)
-Pitchers = filter(lambda x: x[4] != 0, Pitchers)
+  Hitters = filter(lambda x: x[1] != 0, Hitters)
+  Pitchers = filter(lambda x: x[4] != 0, Pitchers)
 
-for hitter in Hitters:
-  if hitter[3] != 0:
-    hitter[14] = "%.3f" % (hitter[5]*1.0/hitter[3]) #BA
-    hitter[16] = ((hitter[5]+hitter[6]+(2*hitter[7])+(3*hitter[8]))*1.0/hitter[3]) #SLG
-  else:
-    hitter[16] = 0.0 #SLG
-  hitter[15] = ((hitter[5]+hitter[10])*1.0/hitter[2]) #OBP
-  hitter[17] = "%.3f" % (hitter[15]+hitter[16]) #OPS
-  hitter[15] = "%.3f" % hitter[15]
-  hitter[16] = "%.3f" % hitter[16]
+  for hitter in Hitters:
+    if hitter[3] != 0:
+      hitter[14] = "%.3f" % (hitter[5]*1.0/hitter[3]) #BA
+      hitter[16] = ((hitter[5]+hitter[6]+(2*hitter[7])+(3*hitter[8]))*1.0/hitter[3]) #SLG
+    else:
+      hitter[16] = 0.0 #SLG
+    hitter[15] = ((hitter[5]+hitter[10])*1.0/hitter[2]) #OBP
+    hitter[17] = "%.3f" % (hitter[15]+hitter[16]) #OPS
+    hitter[15] = "%.3f" % hitter[15]
+    hitter[16] = "%.3f" % hitter[16]
 
-for pitcher in Pitchers:
-  pitcher[3] = "%.2f" % (pitcher[12]*21.0/pitcher[9]) #ERA
-  pitcher[16] = "%.3f" % (pitcher[10]*1.0/(pitcher[10]+pitcher[9])) #BAA
-  pitcher[17] = "%.3f" % ((pitcher[14]+pitcher[10])*3.0/pitcher[9]) #WHIP
+  for pitcher in Pitchers:
+    pitcher[3] = "%.2f" % (pitcher[12]*21.0/pitcher[9]) #ERA
+    pitcher[16] = "%.3f" % (pitcher[10]*1.0/(pitcher[10]+pitcher[9])) #BAA
+    pitcher[17] = "%.3f" % ((pitcher[14]+pitcher[10])*3.0/pitcher[9]) #WHIP
+
+  return (Players,Schedule,News,Articles,Playernames,Games,Hitters,Pitchers)
+
+Players,Schedule,News,Articles,Playernames,Games,Hitters,Pitchers = load_data()
 
 def gameInfo(id):
   for game in Games:
@@ -167,7 +144,7 @@ def roster():
 def scores():
     return render_template('scores.html',scores=Games)
 
-@app.route('/score<int:id>')
+@app.route('/scores/<int:id>')
 def score(id):
     return render_template('boxscore.html',game=gameInfo(id))
 
