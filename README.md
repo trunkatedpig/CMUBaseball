@@ -22,11 +22,3 @@ python app.py
 ```
 
 If you do not have pip installed, you can go to https://pip.pypa.io/en/stable/installing/ for download and installation instructions.
-
-
-TODO:
-* Link database to input and output instead of using dummy variables
-* Add about us section
-* Add boxscores
-* Fix homepage slideshow
-* Fix upload selection
